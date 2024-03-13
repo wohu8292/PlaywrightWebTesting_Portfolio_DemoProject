@@ -1,0 +1,33 @@
+1. attribute?
+
+const documentLink = page.locator("[href*='documents-request']");
+await expect(documentLink).toHaveAttribute("class", "blinkingText");
+
+-----------------------------------------------
+
+2. equals?
+
+const value = inputs[index].getAttribute("value");
+expect(value).toEqual(...)
+
+-----------------------------------------------
+
+3. visible?
+
+await expect(page.locator("#displayed-text")).toBeVisible();
+await page.screenshot({path: 'screenshot.pnt'});
+await expect(page.locator("#displayed-text")).toBeHidden();
+
+-----------------------------------------------
+
+4. same screenshot? (Visual testing comparing before screenshot and after screenshot)
+
+await expect(await page.screenshot()).toMatchSnapshot('landing.png');
+
+-----------------------------------------------
+
+5. checked?
+
+expect(page.locator('.radiotextsty').last()).toBeChecked();
+
+-----------------------------------------------

@@ -1,0 +1,61 @@
+custom config file execution: npx playwright test --config playwright.config1.js
+
+---------------------------------------------------------------------------------------------------
+
+use: {
+	browserName: 'wewbkit',
+	headless: true,							/ browser on and off, off to prevent flakiness
+	screenshot: 'on', 'off', 'only-on-failure,			/ generate screenshot
+	trace: 	'retain-on-failure', 'on', 'off',			/ logging for report
+	viewport: {width:720, width:720},				/ browser size
+	...devices ['iPhone 11'],
+	ignoreHttpsErrors: true,					/ SSL certificate
+	permissions: ['geolocation'],
+	video: 'on', 'off', 'retain-on-failure'				/ record in video
+}
+
+---------------------------------------------------------------------------------------------------
+
+projects:[
+	{
+		name: 'safari_execution',
+		use: 	{
+			browserName: 'wewbkit'
+			headless: true		
+			screenshot: 'on', 'off', 'only-on-failure	
+			trace: 	'retain-on-failure', 'on', 'off'			
+			}
+	},
+
+	{
+		name: 'chrome_execution',
+		use: 	{
+			browserName: 'chromium'
+			headless: true		
+			screenshot: 'on', 'off', 'only-on-failure	
+			trace: 	'retain-on-failure', 'on', 'off'			
+			}
+	}
+]
+
+custom config file execution: npx playwright test --config playwright.config1.js --project=chrome_execution
+
+in default, it will run all the project if you don't give --project=projectName
+
+---------------------------------------------------------------------------------------------------
+
+timeout: 30*1000				/ waiting for all test
+
+---------------------------------------------------------------------------------------------------
+
+expect: {
+	timeout: 5000				/ waiting for assertion
+}
+
+---------------------------------------------------------------------------------------------------
+
+retries: 1					/ due to flakiness issue
+
+---------------------------------------------------------------------------------------------------
+
+workers: 2					/ 2 worker should run parallely at a time. / default is all

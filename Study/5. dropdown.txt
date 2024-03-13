@@ -1,0 +1,24 @@
+you use await when action is performed
+
+1. dropdown
+
+const dropdown = page.locator('select.form-control');
+await dropdown.selectOption("ValueAttr");
+await page.pause();
+
+-------------------------------------------------------
+
+2. radiobox
+
+await page.locator('.radiotextsty').last().click();
+await expect(page.locator('.radiotextsty')).toBeChecked();		/ assertion radio_btn
+
+--------------------------------------------------------
+
+3. checkbox
+await expect page.locator('#terms').click();
+await expect(page.locator('#terms')).toBeChecked();			/ assertion checkbox
+await page.locator('#terms').uncheck();					/ uncheck
+expect(await page.locator('#terms').isChecked).toBeFalsy();		/ expecting unchecked (false)
+expect(await page.locator('#terms').isChecked).toBeTruethy();		/ expecting checked (true)
+

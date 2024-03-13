@@ -1,0 +1,16 @@
+installation: npm i -D @playwright/test allure-playwright
+
+1. npx playwright test --grep Web --reporter=line,allure-playwright
+2. allure generate ./allure-results
+3. allure open ./allure-report
+
+-------------------------------------------------------------------------------------------------
+
+in the package file 
+
+"scripts": {
+	"Regression": "npx playwright test",
+	"webTests": "npx playwright test --grep Tag"
+}
+
+** execution -> npm run webTests

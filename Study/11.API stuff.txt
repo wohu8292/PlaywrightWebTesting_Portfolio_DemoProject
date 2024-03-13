@@ -1,0 +1,23 @@
+getting token from network tab and putting into application tap
+
+const {test, expect, request} = require('@playwright/test');
+const loginPayLoad = {userEmail:"anshika@gmail.com", userPassword:"Iamking@00"};	/ from request payload
+let token;					/ when you initialize = const, just declare variable = let
+
+test.beforeAll(async()=>{
+	const apiContext = await request.newContext();
+	const loginResponse = await apiContext.post("https://rahulshettyacademy.com/api/ecom/auth/login",
+	{data: loginPayLoad})			/ do the post API call	
+
+	expect(loginResponse.ok()).toBeTruthy();
+	const loginResponseJson = loginResponse.json();
+	const token = loginResponseJson.token;
+});
+
+
+
+--------- and
+
+test('Client App Login', async({page})=>{
+	page.addInitScript(value=>{window.localStorage.setItem('token', value);}, token);
+})

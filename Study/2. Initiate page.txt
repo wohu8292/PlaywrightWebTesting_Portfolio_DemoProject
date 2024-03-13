@@ -1,0 +1,44 @@
+const {test, expect} = require('@playwright/test');
+
+---------------------------------------------------------------------------
+cookies, plugins mode
+
+test('Browser Context Playwright test', async ({browser})=>{
+    const context = await browser.newContext();
+    const page = await browser.newPage();
+    await page.goto("https://rahulshettyacademy.com/loginpagePractise/");
+});
+
+------------------------------------
+default mode, run only this test, title assertion
+
+test.only('Page Playwright test', async ({page})=>{
+	await page.goto("https://google.com");
+	console.log(page.title());
+	await expect(page).toHaveTitle('Google');
+});
+
+-----------------------------------------------------------------------------
+
+config File will trigger all test
+
+timeout			/ how much time it should wait
+expect			/ assertion
+reporter		/ how you want to report
+
+use {
+	browserName: 'webkit'		/ webkit=> safari
+	retry, log, screenshot...
+}	
+
+-------------------------------------------------------------------------------
+file -> parralel
+test -> sequential
+
+1. headless mode in default
+npx playwright test				/ npx point to node_modules folder (jar folder)
+
+2. head mode
+npx playwright test --headed			/ head mode
+
+

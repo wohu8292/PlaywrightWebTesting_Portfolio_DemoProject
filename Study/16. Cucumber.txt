@@ -1,0 +1,52 @@
+Downlaod cucumber from javascript cucumber git
+npm install @cucumber/cucumber
+
+Add cucumber from preference
+-----------------------------------------
+executer featuere file: 
+npx  cucumber-js features/Ecommerce.feature 	--tags "@Regression" --parallel 2 --retry 1 --exit 
+						--format html:cucumber-report.html
+
+------------------------------------------
+
+in the stepDefinition file:
+
+const playwright = require('@playwright/test');			/
+const{Given, When, Then} = require('@cucumber/cucumber')
+
+
+Given('~~{string}~~{string}', {timeout: 100*1000}, async function (username, password){
+	const browser = await playwright.chromium.launch({headless: false});
+	const context = await browser.newContext();
+	const page = await context.newPage();
+	this.poManager = new POManager(page);		/ declare variable in the world (this), but global variable	
+	})
+
+------------------------------------------
+
+Hook. (https://github.com/cucumber/cucumber-js/blob/main/docs/support_files/hooks.md)
+
+1.							/ before scenario
+Before(function () {
+	~~~~~
+});
+
+2.
+After(function () {
+	delete cookie or 
+});
+
+3.
+BeforeStep({tags: "@foo"}, function () {			/ run before each given, when, then
+
+});
+
+4.
+AfterStep(async function ({result}) {
+  if (result.status === Status.FAILED) {
+    await this.page.takeScreenshot({path: 'screenshot1.png'});
+  }
+});
+-------------------------------------------
+
+--exit

@@ -1,0 +1,3 @@
+await page.locator("[placeholder*='Country']").pressSequentially("ind");	/ when you want press key one by one
+
+await options.waitFor()								/ wait until element open

@@ -1,0 +1,17 @@
+test.only('practice', async({browser})=>{
+	const context = await browser.newContext();
+	const page = await browser.newPage();
+	const signIn = page.locator('#signInBtn');
+	const cardTitles = page.locator(".card-body a")
+
+	await page.locator("#username").fill("rahulshettyacademy");
+	await page.locator("[type='password']").fill("learning");
+	await signIn.click();
+
+	1. console.log(await cardTitles.nth(0).textContent());		/ To prevent Synchronization issue
+	2. await page.waitForLoadState('networkidle');			/ not recommendable way	
+
+
+	const allTitles = await cardTitles.allTextContents();		/ Store names in array
+	console.log(await allTitles);					/ if Synchronization occur, then output would be []
+})

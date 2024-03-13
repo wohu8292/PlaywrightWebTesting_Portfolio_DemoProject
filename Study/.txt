@@ -1,0 +1,3 @@
+Visual Testing = before screenshot vs after screenshot (Ui testing)
+
+ 

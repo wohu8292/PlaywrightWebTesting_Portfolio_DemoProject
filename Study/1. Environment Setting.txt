@@ -1,0 +1,1 @@
+visual studio terminal 에서 npm init playwright 입력

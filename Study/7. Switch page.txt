@@ -1,0 +1,14 @@
+test('Child Window Handle', async({browser})=>{
+	const context = await browser.newContext();
+	const page = await context.newPage();
+	await page.goto("https://rahulshettyacademy.com/loginpagePractise/");
+	
+	const [newPage] = await Promise.all([		/ iterate until promise is fulfilled to prevent sync issue
+		context.waitForEvent('page'),		/ listen for any new page "pending", "rejected", or "fulfilled"
+		documentLink.click(),
+	])
+
+	const text = await newPage.locator(".red").textContent();
+	const arrayText = await text.split("@");
+	const domain = await arrayText[1].split(" ")[0];
+})

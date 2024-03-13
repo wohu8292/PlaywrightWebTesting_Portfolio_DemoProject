@@ -1,0 +1,12 @@
+1. execute parallely
+test.describe.configure({mode: 'parallel'})
+
+2. making tests interdependently
+test.describe.configure({mode: 'serial'})
+
+3. execute tagged tests
+test("tag testName", async({browser})=>{
+
+})
+
+npx playwright test --grep tag

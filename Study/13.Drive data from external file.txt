@@ -1,0 +1,50 @@
+xml file
+
+[{
+	"username": "woong",
+	"password": "123"
+},
+{
+	"username": "kyeol",
+	"password": "456"
+}]
+
+-----------------------------
+
+**import from outside, and convert json into object, json-> string-> object (stable way)
+
+const dataset = JSON.parse(JSON.stringify(require("../utils/placeholder.json")));
+
+
+for(const data of dataset){
+test('data driving for ${data.username}', async({page})=>{			/ have to make testname unique, use tilt
+	await loginPage.validLogin(data.username, data.password);
+})
+}
+
+--------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------
+
+
+driving test with a custom fixture		/ fixture is like browser from playwright
+
+const {base} = require('@playwright/test');
+
+exports.customtest = base.test.extand(		/ export new bahavior by extanding with new properties
+	{
+	testDataForOrder: {			/ json needs " " for key, but javascript object doesn't
+	username: "woong",
+	password: "123"
+	}
+	})
+
+-----------------------------
+
+in the test file
+
+const {customtest} = require('../utils/test-base')
+
+customtest('logIn', async({page, testDataForOrder})=>
+	await loginPage.validLogin(testDataForOrder.username, testDataForOrder.password);
+)
