@@ -6,15 +6,21 @@
 * Test Case: <https://docs.google.com/spreadsheets/d/1sSFSUeSKL6L3t8_ROjOoiaCJcgCmObI8NPF5coSggIE/edit#gid=0>
 
 #### Code
-* [test file](https://github.com/wohu8292/PlaywrightWebTesting_Portfolio_DemoProject/blob/master/tests/E2E.spec.js)
+* [Test file](https://github.com/wohu8292/PlaywrightWebTesting_Portfolio_DemoProject/blob/master/tests/E2E.spec.js)
 
-* [page object files](https://github.com/wohu8292/PlaywrightWebTesting_Portfolio_DemoProject/tree/master/pageObjects)
+* [Page object files](https://github.com/wohu8292/PlaywrightWebTesting_Portfolio_DemoProject/tree/master/pageObjects)
   
-* [class that manage all the page object file](https://github.com/wohu8292/PlaywrightWebTesting_Portfolio_DemoProject/blob/master/pageObjects/POManager.js)
+* [Class that manage all the page object file](https://github.com/wohu8292/PlaywrightWebTesting_Portfolio_DemoProject/blob/master/pageObjects/POManager.js)
   
 * [JSON test Data](https://github.com/wohu8292/PlaywrightWebTesting_Portfolio_DemoProject/blob/master/testData/example_Data.json)
   
-
-
+--------------
 
 ### 2.Regression Test for product purchasing process in cucumber framework
+
+#### Code
+* [Feature file](https://github.com/wohu8292/PlaywrightWebTesting_Portfolio_DemoProject/blob/master/features/Ecommerce.feature)
+
+* [Step Definition File](https://github.com/wohu8292/PlaywrightWebTesting_Portfolio_DemoProject/blob/master/features/step/StepDefinition.js)
+  
+* [Hook](https://github.com/wohu8292/PlaywrightWebTesting_Portfolio_DemoProject/blob/master/features/hooks/hook.js)
