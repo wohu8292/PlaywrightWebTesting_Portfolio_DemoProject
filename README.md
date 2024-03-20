@@ -1,5 +1,5 @@
-#Playwright Web Automation Demo Portfolio
+# Playwright Web Automation Demo Portfolio
 
-##Works
-###1.Regression Test for product purchase process
+## Works
+### 1.Regression Test for product purchase process
 
