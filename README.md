@@ -15,9 +15,10 @@
 * [JSON test Data](https://github.com/wohu8292/PlaywrightWebTesting_Portfolio_DemoProject/blob/master/testData/example_Data.json)
 
 #### Test Result
-* [Test Video]()
+* [Test Result](https://github.com/wohu8292/PlaywrightWebTesting_Portfolio_DemoProject/tree/master/test-results/E2E-Client-App-Login-for-ZARA-COAT-3-tagforit-chromium)
 
-* [Test Trace]()
+  ![스크린샷 2024-04-01 151801](https://github.com/wohu8292/PlaywrightWebTesting_Portfolio_DemoProject/assets/108155439/2607c6e4-009b-4832-9718-f75304d7982b)
+
 --------------
 
 ### 2.Regression Test for product purchasing process in BDD with cucumber framework
