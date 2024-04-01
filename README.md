@@ -1,7 +1,7 @@
 # Playwright Web Automation Demo Portfolio
 
 ## Works
-### 1.Regression Test for product purchasing process
+### 1.Regression Test for product purchasing process in TDD
 
 * Test Case: <https://docs.google.com/spreadsheets/d/1sSFSUeSKL6L3t8_ROjOoiaCJcgCmObI8NPF5coSggIE/edit#gid=0>
 
@@ -13,10 +13,14 @@
 * [Class that manage all the page object file](https://github.com/wohu8292/PlaywrightWebTesting_Portfolio_DemoProject/blob/master/pageObjects/POManager.js)
   
 * [JSON test Data](https://github.com/wohu8292/PlaywrightWebTesting_Portfolio_DemoProject/blob/master/testData/example_Data.json)
-  
+
+#### Test Result
+* [Test Video]()
+
+* [Test Trace]()
 --------------
 
-### 2.Regression Test for product purchasing process in cucumber framework
+### 2.Regression Test for product purchasing process in BDD with cucumber framework
 
 #### Code
 * [Feature file](https://github.com/wohu8292/PlaywrightWebTesting_Portfolio_DemoProject/blob/master/features/Ecommerce.feature)
